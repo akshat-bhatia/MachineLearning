@@ -33,3 +33,6 @@ X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
 from sklearn.preprocessing import OneHotEncoder
 OneHotEncoder = OneHotEncoder(categorical_features = [0])
 X = OneHotEncoder.fit_transform(X).toarray()
+
+labelencoder_Y = LabelEncoder()
+Y = labelencoder_Y.fit_transform(Y)
