@@ -27,3 +27,9 @@ X[:, 1:3] = Imputer.transform(X[:, 1:3])
 from sklearn.preprocessing import LabelEncoder
 labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
+
+#Dummy Encoding for equal weightage to categorical data
+#Encode categorical integer features using a one-hot aka one-of-K scheme
+from sklearn.preprocessing import OneHotEncoder
+OneHotEncoder = OneHotEncoder(categorical_features = [0])
+X = OneHotEncoder.fit_transform(X).toarray()
