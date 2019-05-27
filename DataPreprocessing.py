@@ -22,3 +22,8 @@ from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values='Nan', strategy='mean', axis=0)
 imputer = Imputer.fit(X)
 X[:, 1:3] = Imputer.transform(X[:, 1:3])
+
+#Encoding catregorical data
+from sklearn.preprocessing import LabelEncoder
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
