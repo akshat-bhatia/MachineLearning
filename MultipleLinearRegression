@@ -27,6 +27,9 @@ X[:, 3] = labelencoder_X.fit_transform(X[:, 3])
 onehotencoder = OneHotEncoder(categorical_features = [3])
 X = onehotencoder.fit_transform(X).toarray()
 
+#Avoiding the dummy variable trap
+X = X[:,1:]
+
 #Splitting the dataset into training and testing dataset
 #Split arrays or matrices into random train and test subsets
 from sklearn.model_selection import train_test_split
