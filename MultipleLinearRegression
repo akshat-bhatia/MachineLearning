@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jun  1 20:46:56 2019
+
+@author: Akshat
+"""
+
+#importing the libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pddataset = pd.read_csv('50_Startups.csv')
+
+#Importing the dataset
+
+#Dividing the dataset based on independent variable 
+'''X is a matrix'''
+X = dataset.iloc[:,:-1].values
+#and dependent decision variable
+'''Y is a vector'''
+Y = dataset.iloc[:,4].values
+
+# Encoding categorical data
+# Encoding the Independent Variable
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X = LabelEncoder()
+X[:, 3] = labelencoder_X.fit_transform(X[:, 3])
+onehotencoder = OneHotEncoder(categorical_features = [3])
+X = onehotencoder.fit_transform(X).toarray()
