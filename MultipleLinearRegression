@@ -8,7 +8,8 @@ Created on Sat Jun  1 20:46:56 2019
 #importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pddataset = pd.read_csv('50_Startups.csv')
+import pandas as pd
+dataset = pd.read_csv('50_Startups.csv')
 
 #Importing the dataset
 
